@@ -1,0 +1,36 @@
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "Apple Product Generator", :name => "description"}
+    %meta{:content => "appleProductGenerator.com", :name => "author"}
+    %meta{:content => "width=1024", :name => "viewport"}
+    %title Generate Apple's next product! | AppleProductGenerator.com
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
+    %link(href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet' type='text/css')
+    %link(rel="stylesheet" type="text/css" href="/stylesheets/reset.css")
+    %link(rel="stylesheet" type="text/css" href="/stylesheets/base_styles.css")
+    %link(rel="stylesheet" type="text/css" href="/stylesheets/app.css")
+    %script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js')
+    %script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js')
+    %script(src='/javascripts/application.js')
+    %script(src='http://platform.twitter.com/anywhere.js?id=Em4m9c1NijzBW6azXo3HSA&amp;v=1')
+    %script(src='http://platform.twitter.com/widgets.js')
+  %body
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    #main= yield

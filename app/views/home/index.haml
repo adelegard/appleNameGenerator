@@ -1,0 +1,21 @@
+.above_logo
+.logo_128{:title => "Please don't sue me apple! <3!"}
+.title_container
+	.small_title
+		APPLE PRODUCT NAME
+	.large_title
+		GENERATOR
+.gradient_above.dn
+.name_container
+	=render :partial => 'home/name'
+.gradient_below.dn
+
+.generate_btn
+	%a.button{:id => "generator"}Generate
+
+.social
+	.social_inner
+		.btn.facebook
+			=render :partial => '/widgets/fbook_like'
+		.btn.twitter
+			=render :partial => '/widgets/tweet'

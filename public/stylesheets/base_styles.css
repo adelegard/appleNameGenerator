@@ -1,0 +1,11 @@
+.dn {
+	display: none;
+}
+
+.dib {display: inline-block}
+
+.pa {position: absolute}
+.pr {position: relative}
+
+.fr {float: right}
+.cr {clear: right}
