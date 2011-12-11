@@ -1,7 +1,4 @@
-.dn {
-	display: none;
-}
-
+.dn {display: none}
 .dib {display: inline-block}
 
 .pa {position: absolute}

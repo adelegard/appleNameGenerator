@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#generator").live("click", function() {
+	$("#generator, .large_title").live("click", function() {
 		var $this = $(this);
 		$this.die('click');
 		getNewName();
@@ -11,6 +11,10 @@ $(document).ready(function() {
 			type: "GET",
 			success: function(data) {
 		  		$(".name_container").html(data);
+			},
+			error: function() {
+				var html = "<div class=\"name dib\">" + getExistingName() + "</div>";
+				$(".name_container").html(html);
 			}
 		});		
 	}
@@ -24,22 +28,25 @@ $(document).ready(function() {
  		}
 	});
 
-	function updateTwitter() {
-  		var newName = $('.name_container .name').text();
-		newName = newName.replace(/(\r\n|\n|\r)/gm,"");
-  		newName = newName.replace(/ +(?= )/g,'');
+	function getExistingName() {
+  		var name = $('.name_container .name').text();
+		name = name.replace(/(\r\n|\n|\r)/gm,"");
+  		name = name.replace(/ +(?= )/g,'');
 
-  		if (newName.charAt(newName.length-1) === " " && 
-  			newName.charAt(newName.length-2) === "S" &&
-  			newName.charAt(newName.length-3) === " ") {
-			newName = newName.replaceAt(newName.length-1, "");
-  			newName = newName.replaceAt(newName.length-2, "");
+  		if (name.charAt(name.length-1) === " " && 
+  			name.charAt(name.length-2) === "S" &&
+  			name.charAt(name.length-3) === " ") {
+			name = name.replaceAt(name.length-1, "");
+  			name = name.replaceAt(name.length-2, "");
   		}
+  		return name;
+	}
 
+	function updateTwitter() {
 		var newAnchor = $('<a>').attr({
 		    'class': 'twitter-share-button',
 		    'data-lang': 'en',
-		    'href': "https://twitter.com/share?text=Apples Newest Product (prediction)!" + newName + ". Generated at "
+		    'href': "https://twitter.com/share?text=Apples Newest Product (prediction)!" + getExistingName() + ". Generated at "
 		})[0];
 
 		if ($(".social .twitter.1").is(":hidden")) {
@@ -60,6 +67,12 @@ $(document).ready(function() {
 		}, 1000);
 	}
 });
+
+if (document.documentElement.attachEvent) {
+    document.documentElement.attachEvent('onmousedown',function(){
+         event.srcElement.hideFocus=true
+    });
+}
 
 String.prototype.replaceAt=function(index, c) {
 	return this.substr(0, index) + c + this.substr(index + (c.length == 0 ? 1 : c.length));

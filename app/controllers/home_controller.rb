@@ -15,6 +15,7 @@ class HomeController < ApplicationController
 
   def full_name
     @endsWithS = false
+    @name = "Ummmm"
     begin
     	@name = get_name
       if @name[-1, 1] == "S"
@@ -22,8 +23,6 @@ class HomeController < ApplicationController
         @name = @name.chomp("S")
       end
     rescue
-      logger.info "exception thrown getting word from wordnik"
-      @name = "iUmmmm"
     end
   end
 
@@ -32,9 +31,11 @@ class HomeController < ApplicationController
     begin
       name = name_wordnik
     rescue
+      logger.error "exception thrown getting word from wordnik"
       begin
         name = name_randexp
       rescue
+        logger.error "exception thrown getting word from randexp"
         name = "Ummmm"
       end
     end

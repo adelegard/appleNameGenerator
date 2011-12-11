@@ -1,29 +1,28 @@
-%script{:src => "http://widgets.twimg.com/j/2/widget.js"}
-:javascript
-  new TWTR.Widget({
-    version: 2,
-    type: 'list',
-    rpp: 20,
-    interval: 30000,
-    title: 'Apple Product Name',
-    subject: 'GENERATOR',
-    width: 250,
-    height: 150,
-    theme: {
-      shell: {
-        background: '#cfcfcf',
-        color: '#ffffff'
+.twitter_list
+  %script{:src => "http://widgets.twimg.com/j/2/widget.js"}
+  :javascript
+    new TWTR.Widget({
+      version: 2,
+      type: 'list',
+      rpp: 20,
+      interval: 30000,
+      width: 250,
+      height: 50,
+      theme: {
+        shell: {
+          background: '#cfcfcf',
+          color: '#ffffff'
+        },
+        tweets: {
+          background: '#ffffff',
+          color: '#444444',
+          links: '#1b66a8'
+        }
       },
-      tweets: {
-        background: '#ffffff',
-        color: '#444444',
-        links: '#1b66a8'
+      features: {
+        scrollbar: true,
+        loop: true,
+        live: true,
+        behavior: 'default'
       }
-    },
-    features: {
-      scrollbar: true,
-      loop: true,
-      live: true,
-      behavior: 'default'
-    }
-  }).render().setList('twitter', 'd9').start();
+    }).render().setList('twitter', 'd9').start();
