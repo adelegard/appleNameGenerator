@@ -11,17 +11,18 @@ $(document).ready(function() {
 			type: "GET",
 			success: function(data) {
 		  		$(".name_container").html(data);
+		  		updateTwitter();
 			},
 			error: function() {
 				var html = "<div class=\"name dib\">" + getExistingName() + "</div>";
 				$(".name_container").html(html);
 			}
-		});		
+		});
 	}
 
 	$(document).keypress(function(e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
- 		if(code == 13 || code == 32) { //Enter keycode
+ 		if(code == 13 || code == 32) { //enter & spacebar
  			e.preventDefault();
  			e.stopPropagation();
 			getNewName();

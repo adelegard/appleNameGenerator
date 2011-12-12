@@ -3,9 +3,11 @@
   :javascript
     new TWTR.Widget({
       version: 2,
-      type: 'list',
-      rpp: 20,
+      type: 'search',
+      search: '#AppleNameGenerator',
       interval: 30000,
+      title: '',
+      subject: '#AppleNameGenerator',
       width: 250,
       height: 50,
       theme: {
@@ -16,13 +18,13 @@
         tweets: {
           background: '#ffffff',
           color: '#444444',
-          links: '#1b66a8'
+          links: '#1985b5'
         }
       },
       features: {
-        scrollbar: true,
+        scrollbar: false,
         loop: true,
         live: true,
         behavior: 'default'
       }
-    }).render().setList('twitter', 'd9').start();
+    }).render().start();

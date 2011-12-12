@@ -10,13 +10,15 @@
 	=render :partial => 'home/name'
 
 .button_container
-	%button.fancy.primary{:id => "generator"}
+	%button.fancy{:id => "generator"}
 		%span Generate
-.twitter_list_container
-	=render :partial => '/widgets/twitter_list'
+.twitter_widget_container
+	=render :partial => '/widgets/tweet_search'
 .social
 	.social_inner
 		.btn.facebook
 			=render :partial => '/widgets/fbook_like'
-		.btn.twitter
+		.btn.twitter.1
+			=render :partial => '/widgets/tweet'
+		.btn.twitter.2.dn
 			=render :partial => '/widgets/tweet'

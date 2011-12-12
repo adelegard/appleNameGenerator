@@ -30,9 +30,9 @@ a:active, a:focus {
 .large_title_container {
 	margin: 0 auto;
 
-    transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
 }
 .large_title_container:hover {
 	text-shadow: 0 0 15px #0770A0;
@@ -45,13 +45,20 @@ a:active, a:focus {
 .large_title_container {
 	width: 435px;
 	height: 80px;
+	text-shadow: 0 0 5px #0770A0;
 }
 
 .small_title {
 	font-size: 29px;
 }
 .large_title {
+	color: #0CA6DD;
 	font-size: 80px;
+
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
 }
 
 .name_container {
@@ -110,7 +117,7 @@ a:active, a:focus {
 
 .social {
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 30px;
 }
 
 .social_inner {
@@ -127,11 +134,11 @@ a:active, a:focus {
 	margin-top: 5px;
 }
 
-.twitter_list_container {
-	margin-top: 20px;
+.twitter_widget_container {
+	margin-top: 60px;
 	width: 100%;
 }
-.twitter_list {
+.twitter_widget {
 	width: 250px;
 	margin: 0 auto;
 }
@@ -145,12 +152,6 @@ a:active, a:focus {
 }
 
 button.fancy {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-
 	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#E1E1E1)) repeat scroll 0 0 transparent;
 	background: -webkit-linear-gradient(top, #FFFFFF, #E1E1E1) repeat scroll 0 0 transparent;
 	background: -moz-linear-gradient(top, #FFFFFF, #E1E1E1) repeat scroll 0 0 transparent;
@@ -185,13 +186,13 @@ button.fancy span {
 }
 
 
-button.fancy.primary {
-   background: #0770A0;
-   background: -webkit-gradient(linear, left top, left bottom, from(#0CA6DD), to(#0770A0)) repeat scroll 0 0 transparent;
-   background: -webkit-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
-   background: -moz-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
-   background: -ms-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
-   background: -o-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
+button.fancy {
+	background: #0770A0;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0CA6DD), to(#0770A0)) repeat scroll 0 0 transparent;
+	background: -webkit-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
+	background: -moz-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
+	background: -ms-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
+	background: -o-linear-gradient(top, #0CA6DD, #0770A0) repeat scroll 0 0 transparent;
 
     border-color: #74BB5A #74BB5A #509338;
     color: #FFFFFF;
@@ -203,20 +204,6 @@ button.fancy:hover {
 	-webkit-box-shadow: 0px 0px 15px #0770A0;
 	-o-box-shadow: 0px 0px 15px #0770A0;
 	box-shadow: 0px 0px 15px #0770A0;
-}
-button.fancy.mousedown {
-
-   background: #783400;
-   background: -webkit-gradient(linear, left top, left bottom, from(#d95e00), to(#783400));
-   background: -webkit-linear-gradient(top, #d95e00, #783400);
-   background: -moz-linear-gradient(top, #d95e00, #783400);
-   background: -ms-linear-gradient(top, #d95e00, #783400);
-   background: -o-linear-gradient(top, #d95e00, #783400);
-   
-    color: #FFFFFF;
-}
-button.fancy.mousedown span {
-    background-position: 0 -120px;
 }
 button.fancy::-moz-focus-inner {
     margin: -1px -3px;
