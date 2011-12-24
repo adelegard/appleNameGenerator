@@ -5,11 +5,11 @@ require 'logger'
 class HomeController < ApplicationController
 
   def index
-  	full_name
+  	full_name()
   end
 
   def ajax_name
-  	full_name
+  	full_name()
   	render :partial => "home/name"
   end
 
@@ -24,6 +24,7 @@ class HomeController < ApplicationController
       end
     rescue
     end
+    #Twitter.search("#AppleGenerator -rt").length.to_s
   end
 
   def get_name
@@ -34,7 +35,8 @@ class HomeController < ApplicationController
       logger.error "exception thrown getting word from wordnik"
       begin
         name = name_randexp
-      rescue
+      rescue Exception => ex
+        logger.error "An error of type #{ex.class} happened, message is #{ex.message}"
         logger.error "exception thrown getting word from randexp"
         name = "Ummmm"
       end

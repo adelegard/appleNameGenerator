@@ -3,9 +3,7 @@ AppleNameGenerator::Application.routes.draw do
 
   root :to => "home#index"
   match '/nn' => 'home#ajax_name'
-  
-
-
+  match '*path' => redirect('/')
 
 
   

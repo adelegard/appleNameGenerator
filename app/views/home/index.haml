@@ -1,11 +1,9 @@
 .above_title
 .title_container.pr
 	.small_title_container
-		.small_title.pa
-			APPLE PRODUCT NAME
+		APPLE PRODUCT NAME
 	.large_title_container
-		.large_title.pa
-			GENERATOR
+		GENERATOR
 .name_container
 	=render :partial => 'home/name'
 
@@ -14,11 +12,11 @@
 		%span Generate
 .twitter_widget_container
 	=render :partial => '/widgets/tweet_search'
+.twitter_hashtag
+	=render :partial => '/widgets/tweet_link'
 .social
 	.social_inner
 		.btn.facebook
 			=render :partial => '/widgets/fbook_like'
-		.btn.twitter.1
-			=render :partial => '/widgets/tweet'
-		.btn.twitter.2.dn
+		.btn.twitter
 			=render :partial => '/widgets/tweet'

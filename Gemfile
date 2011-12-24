@@ -7,6 +7,8 @@ gem "randexp"
 # gem "wordnet", "~> 0.0.5"
 # gem "bdb"
 gem "wordnik"
+# gem "twitter"
+# gem "whenever", :require => false 
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

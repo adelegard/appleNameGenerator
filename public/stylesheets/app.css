@@ -11,13 +11,14 @@ h1 {
 /* non ie and & ie 6,7 */
 a:active, a:focus {
    outline:  none;
-   ie-dummy: expression(this.hideFocus=true);
 }
 
 #main {
 	width: 100%;
 	height: 100%;
+    min-height: 100%;
 	text-align: center;
+    position: relative;
 }
 
 .title_container {
@@ -39,26 +40,22 @@ a:active, a:focus {
 	cursor: pointer;
 }
 .small_title_container {
+    font-size: 29px;
 	width: 295px;
 	height: 30px;
 }
 .large_title_container {
 	width: 435px;
 	height: 80px;
-	text-shadow: 0 0 5px #0770A0;
-}
+	text-shadow: 0 0 3px #0770A0;
+    color: #0CA6DD;
+    font-size: 80px;
 
-.small_title {
-	font-size: 29px;
-}
-.large_title {
-	color: #0CA6DD;
-	font-size: 80px;
-
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .name_container {
@@ -77,6 +74,7 @@ a:active, a:focus {
 	font-size: 45px;
 	line-height: 100px;
 	color: white;
+	white-space: nowrap;
 }
 
 /* Animation */
@@ -95,16 +93,17 @@ a:active, a:focus {
 	animation-iteration-count: 1;
 }
 
-.letter_container {
+.name_container .name .letter_container {
 	position: relative;
 	top: -5px;
+    left: 0px;
 	display: inline-block;
 	margin-left: 0px;
 	font-size: 30px;
 	font-weight: normal;
 }
 
-.letter_border {
+.name_container .name .letter_container .letter_border {
 	border: 3px solid white;
 	border-radius: 6px;
 	height: 33px;
@@ -117,7 +116,7 @@ a:active, a:focus {
 
 .social {
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 15px;
 }
 
 .social_inner {
@@ -142,6 +141,82 @@ a:active, a:focus {
 	width: 250px;
 	margin: 0 auto;
 }
+.twitter_hashtag {
+	margin-top: 5px;
+}
+
+/* custom twitter button */
+.twitter-share {
+    overflow:hidden;
+    display:inline-block;
+    font:bold 11px/1.5 Arial, sans-serif;
+    text-align:center;
+    *display:inline; /* trigger inline-block behaviour in IE < 8 */
+    zoom:1; /* trigger hasLayout in IE < 8 */
+}
+.twitter-button:link,
+.twitter-button:visited {
+    float:left;
+    position:relative;
+    overflow:hidden;
+    height:20px;
+
+    -moz-user-select: none;
+    background-color: #F8F8F8;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#DEDEDE));
+	background-image: -webkit-linear-gradient(center top, #FFFFFF, #DEDEDE);
+	background-image: -moz-linear-gradient(center top, #FFFFFF, #DEDEDE);
+	background-image: -ms-linear-gradient(center top, #FFFFFF, #DEDEDE);
+	background-image: -o-linear-gradient(center top, #FFFFFF, #DEDEDE);
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    outline: medium none;
+    text-decoration: none;
+}
+
+.twitter-button:hover,
+.twitter-button:focus {
+    background-color: #F8F8F8;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#F8F8F8), to(#D9D9D9));
+	background-image: -webkit-linear-gradient(center top, #F8F8F8, #D9D9D9);
+	background-image: -moz-linear-gradient(center top, #F8F8F8, #D9D9D9);
+	background-image: -ms-linear-gradient(center top, #F8F8F8, #D9D9D9);
+	background-image: -o-linear-gradient(center top, #F8F8F8, #D9D9D9);
+    border-color: #BBBBBB;
+    box-shadow: none;
+}
+
+.twitter-button:active {
+    background-color: #EFEFEF;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.twitter-button i {
+    background: url("/images/tweet_sprite.png") no-repeat scroll 0 0 transparent;
+    height: 12px;
+    left: 2px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.twitter-button .label {
+    padding: 0 3px 0 19px;
+}
+
+.twitter-button .label {
+    display: inline-block;
+    vertical-align: top;
+}
+/* end custom twitter button */
 
 .above_title {
 	margin-top: 60px;

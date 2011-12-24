@@ -1,31 +1,66 @@
 $(document).ready(function() {
-	$("#generator, .large_title").live("click", function() {
+
+	updateTweetButtonText();
+
+	$("#generator, .large_title_container").live("click", function() {
 		var $this = $(this);
 		$this.die('click');
 		getNewName();
 	});
 
+	var requestInProgress = false;
+	var names = [];
+	var namesIndex = 0;
 	function getNewName() {
+		if (requestInProgress === true) {
+			return;
+		}
+		requestInProgress = true;
 		$.ajax({
 			url: "nn",
 			type: "GET",
 			success: function(data) {
 		  		$(".name_container").html(data);
-		  		updateTwitter();
+				updateTweetButtonText();
+				names.unshift(data);
+				names = names.splice(0, 10);
+				namesIndex = 0;
 			},
 			error: function() {
 				var html = "<div class=\"name dib\">" + getExistingName() + "</div>";
 				$(".name_container").html(html);
+			},
+			complete: function() {
+				// to prevent users spamming the server
+				requestInProgress = false;
 			}
 		});
 	}
 
 	$(document).keypress(function(e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
- 		if(code == 13 || code == 32) { //enter & spacebar
+ 		if(code === 13 || code === 32) { //enter & spacebar
  			e.preventDefault();
  			e.stopPropagation();
 			getNewName();
+ 		}
+ 		if(code === 37) { //left arrow
+ 			if (names.length <= namesIndex + 1) {
+ 				return false;
+ 			} else {
+				namesIndex = namesIndex + 1;
+ 			}
+	  		$(".name_container").html(names[namesIndex]);
+			updateTweetButtonText();
+ 		}
+ 		if(code === 39) { //right arrow
+			if (namesIndex <= 0) {
+				getNewName();
+				return false;
+			}
+			namesIndex = namesIndex - 1;
+	  		$(".name_container").html(names[namesIndex]);
+			updateTweetButtonText();
  		}
 	});
 
@@ -40,39 +75,32 @@ $(document).ready(function() {
 			name = name.replaceAt(name.length-1, "");
   			name = name.replaceAt(name.length-2, "");
   		}
+		name = trimLeadingAndTrailingWhitespace(name);
   		return name;
 	}
 
-	function updateTwitter() {
-		var newAnchor = $('<a>').attr({
-		    'class': 'twitter-share-button',
-		    'data-lang': 'en',
-		    'href': "https://twitter.com/share?text=Apples Newest Product (prediction)!" + getExistingName() + ". Generated at "
-		})[0];
-
-		if ($(".social .twitter.1").is(":hidden")) {
-			regenTwitterBtns(newAnchor, ".social .twitter.1", ".social .twitter.2");
-		} else {
-			regenTwitterBtns(newAnchor, ".social .twitter.2", ".social .twitter.1");
-		}
+	function updateTweetButtonText() {
+		var newText = encodeURIComponent("#AppleGenerator " + getExistingName());
+		var oldHref = jQuery("#tweet-button").attr("href");
+		newHref = oldHref.replace(/&text=[^&]+/, "&text=" + newText);
+		jQuery("#tweet-button").attr("href", newHref);
 	}
 
-	function regenTwitterBtns(newAnchor, divHidden, divShown) {
-		$(divHidden + " ").html(newAnchor);
-		twttr.widgets.load();
-
-		//give twitter's load method 1 second to reload things (to prevent visual flash of our new shown button)
-		window.setTimeout(function() {  
-		    $(divHidden + " ").show();
-			$(divShown + " ").hide();
-		}, 1000);
-	}
+	twttr.ready(function (twttr) {
+	    twttr.events.bind('click', function(event) {
+			updateTweetButtonText();
+	    });
+	});
 });
 
 if (document.documentElement.attachEvent) {
     document.documentElement.attachEvent('onmousedown',function(){
          event.srcElement.hideFocus=true
     });
+}
+
+function trimLeadingAndTrailingWhitespace (str) {
+    return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 }
 
 String.prototype.replaceAt=function(index, c) {

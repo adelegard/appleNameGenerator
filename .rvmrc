@@ -1,0 +1,6 @@
+rvm_trust_rvmrcs_flag=1
+rvm --create ruby-1.9.2-p290@appleGenerator
+# Ensure that Bundler is installed, install it if it is not.
+if ! command -v bundle ; then
+  gem install bundler
+fi
