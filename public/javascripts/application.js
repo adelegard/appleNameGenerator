@@ -37,7 +37,7 @@ $(document).ready(function() {
 		});
 	}
 
-	$(document).keypress(function(e) {
+	$(document).keyup(function(e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
  		if(code === 13 || code === 32) { //enter & spacebar
  			e.preventDefault();
