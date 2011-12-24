@@ -60,7 +60,6 @@ class HomeController < ApplicationController
   end
 
   def rand_generation
-  	#return ["2", "2G", "2 <span>S</span>", "2G<span>S</span>", "3", "3G", "3<span>S</span>", "3G<span>S</span>", "4", "4G", "4<span>S</span>", "4G<span>S</span>", "classic"].sample
     return ["2", "2G", "2S", "2GS", "3", "3G", "3S", "3GS", "4", "4G", "4S", "4GS", "classic"].sample
   end
 
