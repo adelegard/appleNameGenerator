@@ -24,7 +24,6 @@ class HomeController < ApplicationController
       end
     rescue
     end
-    #Twitter.search("#AppleGenerator -rt").length.to_s
   end
 
   def get_name

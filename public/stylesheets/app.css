@@ -8,6 +8,15 @@ h1 {
 	font-size: 35px;
 }
 
+.dn {display: none}
+.dib {display: inline-block}
+
+.pa {position: absolute}
+.pr {position: relative}
+
+.fr {float: right}
+.cr {clear: right}
+
 /* non ie and & ie 6,7 */
 a:active, a:focus {
    outline:  none;
@@ -30,14 +39,6 @@ a:active, a:focus {
 .small_title_container,
 .large_title_container {
 	margin: 0 auto;
-
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-}
-.large_title_container:hover {
-	text-shadow: 0 0 15px #0770A0;
-	cursor: pointer;
 }
 .small_title_container {
     font-size: 29px;
@@ -76,6 +77,13 @@ a:active, a:focus {
 	color: white;
 	white-space: nowrap;
 }
+.name_container .name a:link,
+.name_container .name a:visited,
+.name_container .name a:hover,
+.name_container .name a:active {
+    text-decoration: none;
+    color: white;
+}
 
 /* Animation */
 .name_container .name {
@@ -92,6 +100,17 @@ a:active, a:focus {
 	-moz-animation-iteration-count: 1;
 	animation-iteration-count: 1;
 }
+/* hover shadow - start */
+.name_container .name {
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+.name_container .name:hover {
+    text-shadow: 0 0 15px #FFF;
+    cursor: pointer;
+}
+/* hover shadow - end */
 
 .name_container .name .letter_container {
 	position: relative;
@@ -282,6 +301,11 @@ button.fancy:hover {
 }
 button.fancy::-moz-focus-inner {
     margin: -1px -3px;
+}
+
+.hint {
+    font-size: 10px;
+    margin-top: 5px;
 }
 
 @-moz-keyframes word-animation {

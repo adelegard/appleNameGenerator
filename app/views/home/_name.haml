@@ -1,6 +1,7 @@
 .name.dib
-	=@name
-	- if @endsWithS
-		.letter_container
-			S
-			.letter_border
+	%a#tweet_name{:href => "https://twitter.com/intent/tweet?count=horizontal&text=#AppleGenerator", :title => "Tweet it!!"}
+		=@name
+		- if @endsWithS
+			.letter_container
+				S
+				.letter_border

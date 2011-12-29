@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	updateTweetButtonText();
 
-	$("#generator, .large_title_container").live("click", function() {
+	$("#generator").live("click", function() {
 		var $this = $(this);
 		$this.die('click');
 		getNewName();
@@ -83,7 +83,7 @@ $(document).ready(function() {
 		var newText = encodeURIComponent("#AppleGenerator " + getExistingName());
 		var oldHref = jQuery("#tweet-button").attr("href");
 		newHref = oldHref.replace(/&text=[^&]+/, "&text=" + newText);
-		jQuery("#tweet-button").attr("href", newHref);
+		jQuery("#tweet-button, #tweet_name").attr("href", newHref);
 	}
 
 	twttr.ready(function (twttr) {
