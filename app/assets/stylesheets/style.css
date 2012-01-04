@@ -135,7 +135,7 @@ a:active, a:focus {
 
 .social {
 	text-align: center;
-	margin-top: 15px;
+	margin-top: 20px;
 }
 
 .social_inner {
@@ -153,7 +153,7 @@ a:active, a:focus {
 }
 
 .twitter_widget_container {
-	margin-top: 60px;
+	margin-top: 40px;
 	width: 100%;
 }
 .twitter_widget {
@@ -218,7 +218,7 @@ a:active, a:focus {
 }
 
 .twitter-button i {
-    background: url("/images/tweet_sprite.png") no-repeat scroll 0 0 transparent;
+    background: url("assets/tweet_sprite.png") no-repeat scroll 0 0 transparent;
     height: 12px;
     left: 2px;
     margin-top: -6px;
@@ -291,7 +291,8 @@ button.fancy {
     border-color: #74BB5A #74BB5A #509338;
     color: #FFFFFF;
 }
-button.fancy:hover {
+button.fancy:hover, 
+button.fancy:focus {
 	background: #28597a;
 
 	-moz-box-shadow: 0px 0px 15px #0770A0;
@@ -301,6 +302,7 @@ button.fancy:hover {
 }
 button.fancy::-moz-focus-inner {
     margin: -1px -3px;
+    border: 0;
 }
 
 .hint {

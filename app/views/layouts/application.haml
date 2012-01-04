@@ -5,15 +5,12 @@
     %meta{:content => "Apple Product Generator", :name => "description"}
     %meta{:content => "appleProductGenerator.com", :name => "author"}
     %meta{:content => "width=1024", :name => "viewport"}
-    %title Generate Apple's next product! | AppleProductGenerator.com
+    %title Apple Product Name Generator
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
-    %link(href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet' type='text/css')
-    %link(rel="stylesheet" type="text/css" href="/stylesheets/reset.css")
-    %link(rel="stylesheet" type="text/css" href="/stylesheets/app.css")
-    %script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js')
-    %script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js')
-    %script(src='/javascripts/application.js')
+    %script(src='http://platform.twitter.com/widgets.js')
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
   %body
     #fb-root
     :javascript

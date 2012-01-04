@@ -2,9 +2,7 @@ $(document).ready(function() {
 
 	updateTweetButtonText();
 
-	$("#generator").live("click", function() {
-		var $this = $(this);
-		$this.die('click');
+	$("#generator").on("click", function() {
 		getNewName();
 	});
 
@@ -20,7 +18,7 @@ $(document).ready(function() {
 			url: "nn",
 			type: "GET",
 			success: function(data) {
-		  		$(".name_container").html(data);
+				$(".name_container").html(data);
 				updateTweetButtonText();
 				names.unshift(data);
 				names = names.splice(0, 10);
@@ -39,12 +37,10 @@ $(document).ready(function() {
 
 	$(document).keyup(function(e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
- 		if(code === 13 || code === 32) { //enter & spacebar
- 			e.preventDefault();
- 			e.stopPropagation();
+ 		if(code === 13) { //enter
 			getNewName();
  		}
- 		if(code === 37) { //left arrow
+ 		if(code === 37 || code === 65) { //left arrow
  			if (names.length <= namesIndex + 1) {
  				return false;
  			} else {
@@ -53,7 +49,7 @@ $(document).ready(function() {
 	  		$(".name_container").html(names[namesIndex]);
 			updateTweetButtonText();
  		}
- 		if(code === 39) { //right arrow
+ 		if(code === 39 || code === 68) { //right arrow
 			if (namesIndex <= 0) {
 				getNewName();
 				return false;
@@ -81,7 +77,7 @@ $(document).ready(function() {
 
 	function updateTweetButtonText() {
 		var newText = encodeURIComponent("#AppleGenerator " + getExistingName());
-		var oldHref = jQuery("#tweet-button").attr("href");
+		var oldHref = jQuery("#tweet_name").attr("href");
 		newHref = oldHref.replace(/&text=[^&]+/, "&text=" + newText);
 		jQuery("#tweet-button, #tweet_name").attr("href", newHref);
 	}
