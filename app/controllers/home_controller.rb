@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     @endsWithS = false
     @name = "Ummmm"
     begin
-    	@name = get_name
+      @name = get_name
       if @name[-1, 1] == "S"
         @endsWithS = true
         @name = @name.chomp("S")
@@ -52,10 +52,10 @@ class HomeController < ApplicationController
   end
 
   def rand_type
-  	if rand(100) <= 5 then
-	  return "U2 Special Edition"
-	end
-  	return ["", "mini", "nano", "touch", "shuffle"].sample
+    if rand(100) <= 5 then
+      return "U2 Special Edition"
+    end
+    return ["", "mini", "nano", "touch", "shuffle"].sample
   end
 
   def rand_generation

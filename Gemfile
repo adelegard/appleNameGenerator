@@ -4,9 +4,9 @@ gem "rails", "~> 3.1.3"
 gem 'rake'
 gem 'haml'
 gem "randexp"
+gem "wordnik"
 # gem "wordnet", "~> 0.0.5"
 # gem "bdb"
-gem "wordnik"
 # gem "twitter"
 # gem "whenever", :require => false 
 

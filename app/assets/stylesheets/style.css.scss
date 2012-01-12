@@ -1,0 +1,346 @@
+body {
+	background-color: #E9E9E9;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+	font-family: Myriad Pro, Trebuchet MS, Arial, Sans-Serif; /* apple */
+}
+
+h1 {
+	font-size: 35px;
+}
+
+.dn {display: none}
+.dib {display: inline-block}
+
+.pa {position: absolute}
+.pr {position: relative}
+
+.fr {float: right}
+.cr {clear: right}
+
+/* non ie and & ie 6,7 */
+a:active, a:focus {
+   outline:  none;
+}
+
+#main {
+	width: 100%;
+	height: 100%;
+    min-height: 100%;
+	text-align: center;
+    position: relative;
+}
+
+.title_container {
+	margin-top: 10px;
+	margin-bottom: 60px;
+	color: #777777;
+}
+
+.small_title_container,
+.large_title_container {
+	margin: 0 auto;
+}
+.small_title_container {
+    font-size: 29px;
+	width: 295px;
+	height: 30px;
+}
+.large_title_container {
+	width: 435px;
+	height: 80px;
+	text-shadow: 0 0 3px #0770A0;
+    color: #0CA6DD;
+    font-size: 80px;
+    @include user-select(none);
+}
+
+.name_container {
+	height: 100px;
+	border-top: 1px solid #F3F3F3;
+    @include linear-gradient(center, top, center, bottom, #B4B4B4, #707070);
+
+    .name {
+        @include animation(word-animation, 0.5s, ease-in-out, 1);
+        @include transition(all, 0.25s, ease-in-out);
+
+    	font-weight: bold;
+    	font-size: 45px;
+    	line-height: 100px;
+    	color: white;
+    	white-space: nowrap;
+
+        &:hover {
+            text-shadow: 0 0 15px #FFF;
+            cursor: pointer;
+        }
+
+        .letter_container {
+            position: relative;
+            top: -5px;
+            left: 0px;
+            display: inline-block;
+            margin-left: 0px;
+            font-size: 30px;
+            font-weight: normal;
+
+            .letter_border,
+            .letter_border_two {
+                @include box-shadow(1px 1px 1px 0px #707070);
+                @include border-radius(6px);
+                border: 3px solid white;
+
+                height: 33px;
+                width: 31px;
+                margin-top: 30px;
+                position: absolute;
+                right: -11px;
+                top: 0px;
+
+                &:hover,
+                .letter_border_hover {
+                    @include box-shadow(1px 1px 1px 5px #FFF);
+                }
+            }
+            .letter_border_two {
+                @include box-shadow(inset 1px 1px 1px #707070);
+
+                &:hover,
+                .letter_border_two_hover {
+                    @include box-shadow(inset 1px 1px 5px #FFF);
+                }
+            }
+        }
+
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .name,
+    .letter_container {
+        text-shadow: 0px 1px 1px #707070;
+    }
+}
+
+.definition {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.social {
+	text-align: center;
+	margin-top: 20px;
+
+    .btn {
+        margin-right: 5px;
+    }
+    .twitter {
+        margin-top: 5px;
+    }
+}
+
+.social_inner {
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.twitter_widget_container {
+	margin-top: 40px;
+	width: 100%;
+}
+.twitter_widget {
+	width: 250px;
+	margin: 0 auto;
+}
+.twitter_hashtag {
+	margin-top: 5px;
+}
+
+/* custom twitter button */
+.twitter-share {
+    overflow:hidden;
+    display:inline-block;
+    font:bold 11px/1.5 Arial, sans-serif;
+    text-align:center;
+    *display:inline; /* trigger inline-block behaviour in IE < 8 */
+    zoom:1; /* trigger hasLayout in IE < 8 */
+}
+.twitter-button:link,
+.twitter-button:visited {
+    float:left;
+    position:relative;
+    overflow:hidden;
+    height:20px;
+
+    @include user-select(none);
+    @include linear-gradient(center, top, center, bottom, #FFFFFF, #DEDEDE);
+    border: 1px solid #CCCCCC;
+    @include border-radius(3px);
+    color: #333333;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    outline: medium none;
+    text-decoration: none;
+}
+
+.twitter-button:hover,
+.twitter-button:focus {
+    border-color: #BBBBBB;
+    @include linear-gradient(center, top, center, bottom, #F8F8F8, #D9D9D9);
+    @include box-shadow(none);
+}
+
+.twitter-button:active {
+    background-color: #EFEFEF;
+    @include box-shadow(0 3px 5px rgba(0, 0, 0, 0.1) inset);
+}
+
+.twitter-button i {
+    background: asset-url("assets/tweet_sprite.png", image) no-repeat scroll 0 0 transparent;
+    background-position: 0px 0px;
+    height: 12px;
+    left: 2px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.twitter-button .label {
+    padding: 0 3px 0 19px;
+}
+
+.twitter-button .label {
+    display: inline-block;
+    vertical-align: top;
+}
+/* end custom twitter button */
+
+.above_title {
+	margin-top: 60px;
+}
+
+.button_container {
+	margin-top: 60px;
+}
+
+button.fancy {
+    @include linear-gradient(center, top, center, bottom, #0CA6DD, #0770A0);
+    @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+    @include border-radius(4px);
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    border-color: #74BB5A #74BB5A #509338;
+
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    height: 50px;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+
+    //-webkit-transition: -webkit-box-shadow .25s ease-in-out;
+    //-moz-transition: -moz-box-shadow .25s ease-in-out;
+	//-o-transition: -o-box-shadow .25s ease-in-out;
+	//transition: -o-box-shadow .25s ease-in-out;
+
+    span {
+        padding: 0 32px;
+    }
+    &:hover, 
+    &:focus {
+        background: #28597A;
+        //@include box-shadow(0px 0px 15px #0770A0);
+    }
+    &::-moz-focus-inner {
+        margin: -1px -3px;
+        border: 0;
+    }
+}
+
+.twtr-doc {
+    //border: 1px solid #B4B4B4;
+}
+
+.hint {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+@-moz-keyframes word-animation {
+  0% {
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    @include transform(0);
+  }
+
+  100% {
+    opacity: 1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    @include transform(1);
+  }
+}
+@-webkit-keyframes word-animation {
+  0% {
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    @include transform(0);
+  }
+
+  100% {
+    opacity: 1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    @include transform(1);
+  }
+}
+@-o-keyframes word-animation {
+  0% {
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    @include transform(0);
+  }
+
+  100% {
+    opacity: 1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    @include transform(1);
+  }
+}
+@-ms-keyframes word-animation {
+  0% {
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    @include transform(0);
+  }
+
+  100% {
+    opacity: 1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    @include transform(1);
+  }
+}
+@keyframes word-animation {
+  0% {
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    @include transform(0);
+  }
+
+  100% {
+    opacity: 1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    @include transform(1);
+  }
+}

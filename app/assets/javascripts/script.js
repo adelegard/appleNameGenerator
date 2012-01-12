@@ -2,8 +2,13 @@ $(document).ready(function() {
 
 	updateTweetButtonText();
 
-	$("#generator").on("click", function() {
+	$("#generator").click(function() {
 		getNewName();
+	});
+
+	$(".name_container .name").on("hover", function() {
+		$(this).find(".letter_border").toggleClass("letter_border_hover");
+		$(this).find(".letter_border_two").toggleClass("letter_border_two_hover");
 	});
 
 	var requestInProgress = false;
