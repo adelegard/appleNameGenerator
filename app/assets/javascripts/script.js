@@ -6,9 +6,10 @@ $(document).ready(function() {
 		getNewName();
 	});
 
-	$(".name_container .name").on("hover", function() {
-		$(this).find(".letter_border").toggleClass("letter_border_hover");
-		$(this).find(".letter_border_two").toggleClass("letter_border_two_hover");
+	$(".name_container").delegate(".name", "hover", function() {
+		$(this).find(".letter_border:visible").toggleClass("letter_border_hover");
+		$(this).find(".letter_border_two:visible").toggleClass("letter_border_two_hover");
+		$(this).find(".letter_container:visible").toggleClass("letter_container_hover");
 	});
 
 	var requestInProgress = false;

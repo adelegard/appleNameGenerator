@@ -61,7 +61,6 @@ a:active, a:focus {
 
     .name {
         @include animation(word-animation, 0.5s, ease-in-out, 1);
-        @include transition(all, 0.25s, ease-in-out);
 
     	font-weight: bold;
     	font-size: 45px;
@@ -96,19 +95,33 @@ a:active, a:focus {
                 right: -11px;
                 top: 0px;
 
-                &:hover,
-                .letter_border_hover {
-                    @include box-shadow(1px 1px 1px 5px #FFF);
+                &:hover {
+                    @include box-shadow(0 0 0 1px #FFF);
                 }
+            }
+            .letter_border_hover {
+                @include box-shadow(0 0 0 1px #FFF);
             }
             .letter_border_two {
                 @include box-shadow(inset 1px 1px 1px #707070);
 
-                &:hover,
-                .letter_border_two_hover {
-                    @include box-shadow(inset 1px 1px 5px #FFF);
+                &:hover {
+                    @include box-shadow(inset 0 0 1px #FFF);
                 }
             }
+            .letter_border_two_hover {
+                @include box-shadow(inset 0 0 1px #FFF);
+            }
+
+            &:hover {
+                text-shadow: 0 0 5px #FFF;
+                cursor: pointer;
+            }
+        }
+
+        .letter_container_hover {
+            text-shadow: 0 0 5px #FFF;
+            cursor: pointer;
         }
 
         a:link,
@@ -250,11 +263,6 @@ button.fancy {
     padding: 0;
     position: relative;
     white-space: nowrap;
-
-    //-webkit-transition: -webkit-box-shadow .25s ease-in-out;
-    //-moz-transition: -moz-box-shadow .25s ease-in-out;
-	//-o-transition: -o-box-shadow .25s ease-in-out;
-	//transition: -o-box-shadow .25s ease-in-out;
 
     span {
         padding: 0 32px;
