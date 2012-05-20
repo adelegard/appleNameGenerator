@@ -7,12 +7,15 @@
 .name_container
 	=render :partial => 'home/name'
 .button_container
+	// %button.button-glossy.goog-blue{:id => "generator"}
+	//	Generate
 	%button.fancy{:id => "generator"}
 		%span Generate
 .hint
 	hint: use left (previous) & 
 .hint
 	right (new) arrow keys
+//%input.synonym{:placeholder => "Find a Synonym of..."}
 .twitter_widget_container
 	=render :partial => '/widgets/tweet_search'
 .social

@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 	$("#generator").click(function() {
 		getNewName();
+		_gaq.push(['_trackEvent', 'click', 'generate', '']);
 	});
 
 	$(".name_container").delegate(".name", "hover", function() {
@@ -19,9 +20,12 @@ $(document).ready(function() {
 		if (requestInProgress === true) {
 			return;
 		}
+		var url = "nn";
+		//var synonym = $("input.synonym").val();
 		requestInProgress = true;
 		$.ajax({
 			url: "nn",
+			//data: {'s': synonym},
 			type: "GET",
 			success: function(data) {
 				$(".name_container").html(data);
@@ -45,8 +49,10 @@ $(document).ready(function() {
 		var code = (e.keyCode ? e.keyCode : e.which);
  		if(code === 13) { //enter
 			getNewName();
+			_gaq.push(['_trackEvent', 'key_press', '13', 'enter']);
  		}
- 		if(code === 37 || code === 65) { //left arrow
+ 		else if (code === 37 || code === 65) { //left arrow
+			_gaq.push(['_trackEvent', 'key_press', '37', 'left arrow']);
  			if (names.length <= namesIndex + 1) {
  				return false;
  			} else {
@@ -55,7 +61,8 @@ $(document).ready(function() {
 	  		$(".name_container").html(names[namesIndex]);
 			updateTweetButtonText();
  		}
- 		if(code === 39 || code === 68) { //right arrow
+ 		else if (code === 39 || code === 68) { //right arrow
+			_gaq.push(['_trackEvent', 'key_press', '39', 'right arrow']);
 			if (namesIndex <= 0) {
 				getNewName();
 				return false;
@@ -91,6 +98,7 @@ $(document).ready(function() {
 	twttr.ready(function (twttr) {
 	    twttr.events.bind('click', function(event) {
 			updateTweetButtonText();
+			_gaq.push(['_trackEvent', 'click', 'generated name', '']);
 	    });
 	});
 });
