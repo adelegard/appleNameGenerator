@@ -13,6 +13,10 @@ $(document).ready(function() {
 		$(this).find(".letter_container:visible").toggleClass("letter_container_hover");
 	});
 
+	$(".um_why .why").click(function() {
+		$(this).next(".reason").slideToggle('fast');
+	})
+
 	var requestInProgress = false;
 	var names = [];
 	var namesIndex = 0;

@@ -14,6 +14,7 @@ h1 {
 .pa {position: absolute}
 .pr {position: relative}
 
+.fl {float: left}
 .fr {float: right}
 .cr {clear: right}
 
@@ -160,6 +161,21 @@ a:active, a:focus {
 	width: 100px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.um_why {
+    font-size: 12px;
+    margin-top: 15px;
+}
+.um_why a {
+    color: #2870B0;
+    text-decoration: none;
+}
+.um_why .reason {
+    margin-top: 10px;
+}
+.um_why .reason > div {
+    margin-top: 5px;
 }
 
 .twitter_widget_container {
