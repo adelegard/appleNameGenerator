@@ -166,15 +166,25 @@ a:active, a:focus {
 .um_why {
     font-size: 12px;
     margin-top: 15px;
+    padding-bottom: 10px;
 }
 .um_why a {
     color: #2870B0;
     text-decoration: none;
 }
-.um_why .reason {
+.um_why .reason_container {
     margin-top: 10px;
+    padding-bottom: 40px;
+    width: 100%;
 }
-.um_why .reason > div {
+.um_why .reason {
+    border: 1px solid #B4B4B4;
+    @include border-radius(3px);
+    width: 190px;
+    padding: 8px;
+    margin: 0 auto;
+}
+.um_why .reason .with {
     margin-top: 5px;
 }
 

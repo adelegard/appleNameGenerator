@@ -14,7 +14,7 @@ $(document).ready(function() {
 	});
 
 	$(".um_why .why").click(function() {
-		$(this).next(".reason").slideToggle('fast');
+		$(".reason_container").slideToggle('fast');
 	})
 
 	var requestInProgress = false;
