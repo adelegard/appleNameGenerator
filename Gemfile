@@ -1,7 +1,9 @@
 source 'http://rubygems.org'
 
 gem "rails", "3.2.0"
-gem 'mysql2'
+gem 'thin'
+#gem 'mysql2'
+gem 'pg'
 gem 'rake'
 gem 'haml'
 gem "randexp"

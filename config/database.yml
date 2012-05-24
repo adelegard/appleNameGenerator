@@ -1,23 +1,42 @@
-development:
-  adapter: mysql2
-  database: apple
-  username: root
-  password: "123"
-  host: localhost
+#development:
+#  adapter: mysql2
+#  database: apple
+#  username: root
+#  password: "123"
+#  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  adapter: mysql2
-  database: apple_test
+#test:
+#  adapter: mysql2
+#  database: apple_test
+#  username: root
+#  password: "123"
+#  host: localhost
+
+#production:
+#  adapter: mysql2
+#  database: apple_prod
+#  username: root
+#  password: "123"
+#  host: localhost
+
+
+common: &common
+  adapter: postgresql
   username: root
-  password: "123"
+  password:
   host: localhost
 
+development:
+  <<: *common
+  database: apple_dev_pg
+
+test:
+  <<: *common
+  database: apple_test_pg
+
 production:
-  adapter: mysql2
-  database: apple_prod
-  username: root
-  password: "123"
-  host: localhost
+  <<: *common
+  database: apple_prod_pg

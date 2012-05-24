@@ -6,13 +6,23 @@ class ResponseWord < ActiveRecord::Base
         def get_name
             name = ""
             begin
-                if rand(100) <= 5
-                    name = name_wordnik
+                if rand(100) <= 95
+                    begin
+                        name = name_wordnik
+                    rescue
+                        logger.error "exception thrown getting word from wordnik, trying db"
+                        name = name_db
+                    end
                 else
-                    name = name_db
+                    begin
+                        name = name_db
+                    rescue
+                        logger.error "exception thrown getting word from db, trying wordnik"
+                        name = name_wordnik
+                    end
                 end
             rescue
-                logger.error "exception thrown getting word from wordnik"
+                logger.error "exception thrown getting word from wordnik, using randexp gem"
                 begin
                     name = name_randexp
                 rescue Exception => ex
