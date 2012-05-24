@@ -6,7 +6,7 @@ class ResponseWord < ActiveRecord::Base
         def get_name
             name = ""
             begin
-                if rand(100) <= 95
+                if rand(100) <= 5
                     begin
                         name = name_wordnik
                     rescue
