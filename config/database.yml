@@ -25,8 +25,8 @@
 
 common: &common
   adapter: postgresql
-  username: root
-  password:
+  username: admin
+  password: apple214
   host: localhost
 
 development:
