@@ -1,13 +1,15 @@
 source 'http://rubygems.org'
 
 gem "rails", "3.2.3"
-gem 'thin'
+#gem 'thin'
+gem 'unicorn'
 #gem 'mysql2'
 gem 'pg'
 gem 'rake'
 gem 'haml'
 gem "randexp"
 gem "wordnik"
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -32,8 +32,7 @@ $(document).ready(function() {
 			//data: {'s': synonym},
 			type: "GET",
 			success: function(data) {
-				$(".name_container").html(data);
-				updateTweetButtonText();
+				setNewName(data);
 				names.unshift(data);
 				names = names.splice(0, 10);
 				namesIndex = 0;
@@ -62,8 +61,7 @@ $(document).ready(function() {
  			} else {
 				namesIndex = namesIndex + 1;
  			}
-	  		$(".name_container").html(names[namesIndex]);
-			updateTweetButtonText();
+ 			setNewName(names[namesIndex]);
  		}
  		else if (code === 39 || code === 68) { //right arrow
 			_gaq.push(['_trackEvent', 'key_press', '39', 'right arrow']);
@@ -72,10 +70,14 @@ $(document).ready(function() {
 				return false;
 			}
 			namesIndex = namesIndex - 1;
-	  		$(".name_container").html(names[namesIndex]);
-			updateTweetButtonText();
+	  		setNewName(names[namesIndex]);
  		}
 	});
+
+	function setNewName(name) {
+		$(".name_container").html(name);
+		updateTweetButtonText();
+	}
 
 	function getExistingName() {
   		var name = $('.name_container .name').text();
