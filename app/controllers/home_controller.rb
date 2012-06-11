@@ -4,8 +4,8 @@ require "randexp"
 
 class HomeController < ApplicationController
 
+  caches_page :index
   def index
-  	full_name()
   end
 
   def name

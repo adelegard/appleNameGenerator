@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+	//since we are loading the cached index page WITHOUT the name filled in
+	getNewName();
+
 	updateTweetButtonText();
 
 	$("#generator").click(function() {
