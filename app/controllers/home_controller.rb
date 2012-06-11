@@ -1,6 +1,5 @@
 %w(rubygems wordnik).each {|lib| require lib}
 require "randexp"
-#require "logger"
 
 class HomeController < ApplicationController
 
