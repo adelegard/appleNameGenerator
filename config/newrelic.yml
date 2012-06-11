@@ -5,7 +5,8 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: '1ddc382e3a01d45e2347ea00999bceeff0783506'
+  #license_key: '1ddc382e3a01d45e2347ea00999bceeff0783506'
+  license_key: '639af846054728481df38a63bae3f0010ef22e00'
 
   # Agent Enabled (Rails Only)
   # Use this setting to force the agent to run or not run.
@@ -32,7 +33,8 @@ common: &default_settings
   #       - Ajax Service
   #       - All Services
   # 
-  app_name: <%= ENV["applegenerator Heroku"] %>
+  #app_name: <%= ENV["applegenerator Heroku"] %>
+  app_name: smooth-galaxy-7648 Heroku
 
   # When "true", the agent collects performance data about your 
   # application and reports this data to the New Relic service at 
