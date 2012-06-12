@@ -4,6 +4,7 @@ gem "rails", "3.2.3"
 #gem 'thin'
 gem 'unicorn'
 #gem 'mysql2'
+gem 'dalli'
 gem 'pg'
 gem 'rake'
 gem 'haml'
