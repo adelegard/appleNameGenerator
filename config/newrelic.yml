@@ -34,7 +34,7 @@ common: &default_settings
   #       - All Services
   # 
   #app_name: <%= ENV["applegenerator Heroku"] %>
-  app_name: smooth-galaxy-7648 Heroku
+  app_name: ag-staging
 
   # When "true", the agent collects performance data about your 
   # application and reports this data to the New Relic service at 
