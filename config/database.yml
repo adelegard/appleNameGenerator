@@ -37,6 +37,10 @@ test:
   <<: *common
   database: apple_test_pg
 
+staging:
+  <<: *common
+  database: apple_prod_pg
+
 production:
   <<: *common
   database: apple_prod_pg
